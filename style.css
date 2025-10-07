@@ -1,0 +1,161 @@
+body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(120deg, #232946 0%, #1a1a2e 100%);
+    color: #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: auto;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    background: #232946;
+    padding: 40px 32px;
+    border-radius: 24px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.30);
+    position: relative;
+    z-index: 1;
+    border: 1px solid #393e46;
+    animation: none;
+    backdrop-filter: blur(0px);
+    max-width: 400px;
+    width: 100%;
+    margin: 0 16px;
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+.container:hover {
+    box-shadow: 0 8px 40px rgba(0,0,0,0.40);
+    border-color: #00b894;
+}
+
+input {
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1.5px solid #00b894;
+    font-size: 17px;
+    margin: 24px 0;
+    background: #16161a;
+    color: #eaeaea;
+    box-shadow: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    width: 100%;
+    max-width: 320px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+input:focus {
+    border-color: #0984e3;
+    outline: none;
+    box-shadow: 0 2px 8px #0984e344;
+}
+
+
+/* Error message styling */
+#result {
+    font-size: 18px;
+    margin-top: 18px;
+    color: #ff7675;
+    font-weight: 500;
+    text-shadow: none;
+    letter-spacing: 0.5px;
+}
+
+/* Age result layout */
+.result-cards {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.result-card {
+    background: #16161a;
+    border-radius: 16px;
+    padding: 18px 12px 12px 12px;
+    min-width: 70px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1.5px solid #232946;
+    transition: box-shadow 0.2s, border-color 0.2s;
+    margin-bottom: 10px;
+}
+.result-card-years {
+    border-color: #0984e3;
+}
+.result-card-months {
+    border-color: #e17055;
+}
+.result-card-days {
+    border-color: #00b894;
+}
+.result-card-minutes {
+     border-color: #fdcb6e;
+}
+.result-card-seconds {
+     border-color: #d63031;
+}
+.result-card-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #eaeaea;
+    margin-bottom: 2px;
+}
+.result-card-label {
+    font-size: 1rem;
+    color: #b2bec3;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Calculate button styling */
+
+/* Calendar and formatted age display */
+.calendar-age {
+    display: none;
+}
+
+/* Responsive for mobile */
+@media (max-width: 500px) {
+    .container {
+        padding: 24px 8px;
+        border-radius: 16px;
+        max-width: 98vw;
+    }
+    input {
+        font-size: 16px;
+        padding: 12px 10px;
+    }
+    #result {
+        font-size: 16px;
+    }
+    .result-cards {
+        gap: 6px;
+        margin-top: 14px;
+        max-width: 98vw;
+    }
+    .result-card {
+        padding: 10px 2px 6px 2px;
+        min-width: 45px;
+        border-radius: 8px;
+    }
+    .result-card-value {
+        font-size: 1rem;
+    }
+    .result-card-label {
+        font-size: 0.8rem;
+    }
+    .calendar-age {
+        font-size: 0.95rem;
+        padding: 10px 4px;
+    }
+}

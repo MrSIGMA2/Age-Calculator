@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+            <h1>Age Calculator</h1>
+            <input type="text" id="dob" placeholder="dd/mm/yyyy" maxlength="10" autocomplete="off">
+            <script>
+            // Auto-format input to dd/mm/yyyy
+            document.addEventListener('DOMContentLoaded', function() {
+                const dobInput = document.getElementById('dob');
+                dobInput.addEventListener('input', function(e) {
+                    let value = dobInput.value.replace(/[^0-9]/g, '');
+                    if (value.length > 2) value = value.slice(0,2) + '/' + value.slice(2);
+                    if (value.length > 5) value = value.slice(0,5) + '/' + value.slice(5);
+                    if (value.length > 10) value = value.slice(0,10);
+                    dobInput.value = value;
+                });
+            });
+            </script>
+            <div class="result-cards" id="resultCards" style="display:none;">
+                <div class="result-card result-card-years">
+                    <div class="result-card-value" id="years">0</div>
+                    <div class="result-card-label">Years</div>
+                </div>
+                <div class="result-card result-card-months">
+                    <div class="result-card-value" id="months">0</div>
+                    <div class="result-card-label">Months</div>
+                </div>
+                <div class="result-card result-card-days">
+                    <div class="result-card-value" id="days">0</div>
+                    <div class="result-card-label">Days</div>
+                </div>
+                <div class="result-card result-card-minutes">
+                    <div class="result-card-value" id="minutes">0</div>
+                    <div class="result-card-label">Minutes</div>
+                </div>
+                <div class="result-card result-card-seconds">
+                    <div class="result-card-value" id="seconds">0</div>
+                    <div class="result-card-label">Seconds</div>
+                </div>
+            </div>
+            <div class="calendar-age" id="calendarAge"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
